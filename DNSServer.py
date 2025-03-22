@@ -70,7 +70,7 @@ dns_records = {
     'http://www.yahoo.com': {
         dns.rdatatype.A: '192.168.1.105'
     },
-    'nyu.edu': {
+    'https://www.nyu.edu': {
         dns.rdatatype.A: '192.168.1.106',
         dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0373:7312',
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com.')], 
