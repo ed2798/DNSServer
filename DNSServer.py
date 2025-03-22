@@ -77,16 +77,16 @@ dns_records = {'example.com.': {
     'safebank.com.': {
         dns.rdatatype.A: '192.168.1.102',
     },
-    'www.google.com': {
+    'google.com.': {
         dns.rdatatype.A: '192.168.1.103'
     },
-    'http://www.legitsite.com': {
+    'legitsite.com.': {
         dns.rdatatype.A: '192.168.1.104'
     },
-    'http://www.yahoo.com': {
+    'yahoo.com.': {
         dns.rdatatype.A: '192.168.1.105'
     },
-    'https://www.nyu.edu': {
+    'nyu.edu.': {
         dns.rdatatype.A: '192.168.1.106',
         dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0373:7312',
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com.')], 
