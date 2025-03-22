@@ -58,19 +58,19 @@ def generate_sha256_hash(input_string):
 
 # A dictionary containing DNS records mapping hostnames to different types of DNS data.
 dns_records = {
-    'http://www.safebank.com.': {
+    'http://www.safebank.com': {
         dns.rdatatype.A: '192.168.1.102',
     },
-    'google.com.': {
+    'http://www.google.com.': {
         dns.rdatatype.A: '192.168.1.103'
     },
-    'legitsite.com': {
+    'http://www.legitsite.com': {
         dns.rdatatype.A: '192.168.1.104'
     },
-    'yahoo.com': {
+    'http://www.yahoo.com': {
         dns.rdatatype.A: '192.168.1.105'
     },
-    'nyu.edu': {
+    'http://www.nyu.edu': {
         dns.rdatatype.A: '192.168.1.106',
         dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0373:7312',
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com.')], 
