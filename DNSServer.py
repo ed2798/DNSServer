@@ -61,7 +61,7 @@ dns_records = {
     'http://www.safebank.com': {
         dns.rdatatype.A: '192.168.1.102',
     },
-    'http://www.google.com.': {
+    'www.google.com.': {
         dns.rdatatype.A: '192.168.1.103'
     },
     'http://www.legitsite.com': {
