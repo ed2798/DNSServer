@@ -74,7 +74,7 @@ dns_records = {'example.com.': {
             86400, #minimum
         ),
     },
-    'http://www.safebank.com': {
+    'safebank.com.': {
         dns.rdatatype.A: '192.168.1.102',
     },
     'www.google.com': {
