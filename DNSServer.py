@@ -91,7 +91,7 @@ dns_records = {'example.com.': {
         dns.rdatatype.AAAA: '2001:0db8:85a3:0000:0000:8a2e:0373:7312',
         dns.rdatatype.MX: [(10, 'mxa-00256a01.gslb.pphosted.com.')], 
         dns.rdatatype.NS: 'ns1.nyu.edu.',
-        dns.rdatatype.TXT: ("AlwaysWatching")
+        dns.rdatatype.TXT: ({str(encrypted_value)})
     },
    
     # Add more records as needed (see assignment instructions!
@@ -109,9 +109,11 @@ def run_dns_server():
             # Parse the request using the `dns.message.from_wire` method
             request = dns.message.from_wire(data)
             # Create a response message using the `dns.message.make_response` method
+           # print(request)
             response = dns.message.make_response(request)
 
             # Get the question from the request
+            #print("request.question[0]: ", request.question[0])
             question = request.question[0]
             qname = question.name.to_text()
             qtype = question.rdtype
@@ -138,12 +140,15 @@ def run_dns_server():
                 for rdata in rdata_list:
                     response.answer.append(dns.rrset.RRset(question.name, dns.rdataclass.IN, qtype))
                     response.answer[-1].add(rdata)
+                    #print("rdata: ", rdata)
+                    #print("response after rdata is: ", response)
 
             # Set the response flags
             response.flags |= 1 << 10
 
             # Send the response back to the client using the `server_socket.sendto` method and put the response to_wire(), return to the addr you received from
             print("Responding to request:", qname)
+            print("response returned is: ", response)
             server_socket.sendto(response.to_wire(), addr) 
         except KeyboardInterrupt:
             print('\nExiting...')
